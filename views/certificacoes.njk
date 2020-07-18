@@ -1,8 +1,8 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block head %}
-<title>Certificações - Gabriel Cordeiro</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Certificações - Gabriel Cordeiro</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 {% endblock %}
 
 {% block content %}
@@ -13,87 +13,23 @@
 
     <section class="cards">
 
-        <div class="card" id="0lLOYiHsCqM">
-            <div class="card__image-container">
-                <img src="" alt="">
-            </div>
-            <div class="card__content">
-                <p>Certificado de Conclusão de Python 3</p>
-            </div>
-            <div class="card__info">
-                <p>Tempo Levado: 12.5 horas</p>
-                <p class="card__price">Custo: R$ 30,00</p>
-            </div>
-        </div>
+        {% for item in items %}
 
-        <div class="card" id="zs1lXFOAIWo">
-            <div class="card__image-container">
-                <img src="" alt="">
+            <div class="card" id="{{item.id}}">
+                <div class="card__image-container">
+                    <img src="https://i.ytimg.com/vi/{{item.id}}/maxresdefault.jpg" alt="">
+                </div>
+                <div class="card__content">
+                    <p>{{item.title}}</p>
+                </div>
+                <div class="card__info">
+                    <p>{{item.duration}}</p>
+                    <p class="card__price">{{item.price}}</p>
+                </div>
             </div>
-            <div class="card__content">
-                <p>Certificado de Conclusão de HTML5</p>
-            </div>
-            <div class="card__info">
-                <p>Tempo Levado: 40 horas</p>
-                <p class="card__price">Custo: R$ 30,00</p>
-            </div>
-        </div>
+        {% endfor %}
 
-        <div class="card" id="VOH-aDfL4PQ">
-            <div class="card__image-container">
-                <img src="" alt="">
-            </div>
-            <div class="card__content">
-                <p>Certificado de Conclusão de MySQL</p>
-            </div>
-            <div class="card__info">
-                <p>Tempo Levado: 40 horas</p>
-                <p class="card__price">Custo: R$ 30,00</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__image-container">
-                <img src="" alt="">
-            </div>
-            <div class="card__content">
-                <p>Em Andamento</p>
-            </div>
-            <div class="card__info">
-                <p></p>
-                <p class="card__price"></p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__image-container">
-                <img src="" alt="">
-            </div>
-            <div class="card__content">
-                <p>Em Andamento</p>
-            </div>
-            <div class="card__info">
-                <p></p>
-                <p class="card__price"></p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card__image-container">
-                <img src="" alt="">
-            </div>
-            <div class="card__content">
-                <p>Em Andamento</p>
-            </div>
-            <div class="card__info">
-                <p></p>
-                <p class="card__price"></p>
-            </div>
-        </div>
-
-    </section>
-    
-    <div class="modal-overlay">
+        <div class="modal-overlay">
         <div class="modal">
             <a class="close-modal">
                 <i class="material-icons">close</i>
@@ -105,5 +41,5 @@
         </div>
     </div>
 
-    <script src="/js.js"></script>
+    <script src="js.js"></script>
 {% endblock %}

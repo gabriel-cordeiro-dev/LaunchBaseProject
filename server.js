@@ -2,6 +2,7 @@ const express = require('express')// requisitando o express
 const nunjucks = require('nunjucks')
 
 const server = express()//inserindo o express no server
+const videos = require('./data')//está referenciando o arquivo na raiz
 
 server.use(express.static('public'))
 
@@ -18,7 +19,8 @@ server.get('/', function (req,res) {
 })
 
 server.get('/certificacoes', function (req,res) {
-    return res.render('certificacoes')
+
+    return res.render('certificacoes', {items: videos})
 })
 
 //configurar servidor na porta 5000
