@@ -1,20 +1,20 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>Sobre - Gabriel Cordeiro</title>
+    <title>Sobre - {{ about.name }}</title>
 {% endblock %}
 
 {% block content %}
     <div id="wrapper">
-        <img src="https://avatars0.githubusercontent.com/u/61247355?s=460&u=4" alt="Gabriel Cordeiro">
-        <h1>Gabriel Cordeiro</h1>
-        <h2>Desenvolvedor</h2>
-        <p>Programador Full-Stack</p>
+        <img src="{{ about.avatar_url }}" alt="Gabriel Cordeiro">
+        <h1>{{ about.name }}</h1>
+        <h2>{{ about.role }}</h2>
+        <p>{{ about.description }}</p>
     </div>
 
     <div id="links-footer" class="links">
-        <a href="https://github.com/gabriel-cordeiro-dev" target="_blank">Github</a>
-        <a href="https://www.instagram.com/gabrielluuckner/" target="_blank">Instagram</a>
-        <a href="https://www.linkedin.com/in/gabriel-cordeiro-033641144/" target="_blank">Linkedin</a>
+        {% for link in about.links %}
+            <a href="{{ links.url }}" target="_blank">{{ links.name }}</a>
+        {%  endfor %}
     </div> 
 {% endblock %}
