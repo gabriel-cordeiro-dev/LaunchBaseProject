@@ -13,7 +13,7 @@
     </div>
 
     <div id="links-footer" class="links">
-        {% for link in about.links %}
+        {% for links in about.links %}
             <a href="{{ links.url }}" target="_blank">{{ links.name }}</a>
         {%  endfor %}
     </div> 
